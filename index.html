@@ -206,7 +206,12 @@
                 if (player == 2) {
                     iframe.src = `https://vidsrc.to/embed/tv/${id}/${season}/${episode}`;
                 }
-               
+
+                if (player == 3) {
+                    iframe.src = 'https://www.2embed.cc/embedtv/${id}&s=${season}&e=${episode}';
+
+                }
+
             }
             else {
                 if (player == 1) {
@@ -215,6 +220,9 @@
                 if (player == 2) {
                     
                     iframe.src = `https://vidsrc.to/embed/movie/${id}`;
+                }
+                if (player == 3) {
+                    iframe.src = 'https://www.2embed.cc/embed/${id}
                 }
             }
 

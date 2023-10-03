@@ -202,10 +202,15 @@
                 if (player == 1) {
                     iframe.src = `https://vidsrc.me/embed/tv?imdb=${id}&season=${season}&episode=${episode}`;
                 }
+               
             }
             else {
                 if (player == 1) {
-                iframe.src = `https://vidsrc.me/embed/movie?imdb=${id}`;
+                    iframe.src = `https://vidsrc.me/embed/movie?imdb=${id}`;
+                } 
+                if (player ==2) {
+                    
+                    iframe.src = `https://vidsrc.to/embed/movie/${id}`;
                 }
             }
 

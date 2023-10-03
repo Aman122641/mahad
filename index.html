@@ -27,6 +27,8 @@
             onsubmit="event.preventDefault(); get_iframe(); return false;">
             <input type="text" id="id" placeholder="IMDb ID (e.g. tt1553656)" class="width-auto my-2"
                 style="max-width: 100%" required>
+            <input type="number" id="player" placeholder="Player eg. 1, 2, 3" class="width-auto my-2"
+                style="max-width: 100%" required>
             <input type="number" id="season" placeholder="Season Number (e.g. 1)" class="width-auto my-2"
                 style="max-width: 100%">
             <input type="number" id="episode" placeholder="Episode Number (e.g. 1)" class="width-auto my-2"
@@ -186,8 +188,9 @@
         }
 
         function get_iframe() {
+            
             iframe = document.querySelector('iframe');
-
+            player = document.querySelector('#player').value;
             id = document.querySelector('#id').value;
             season = document.querySelector('#season').value;
             episode = document.querySelector('#episode').value;
@@ -196,10 +199,14 @@
             var title;
 
             if (season && episode) {
-                iframe.src = `https://vidsrc.me/embed/tv?imdb=${id}&season=${season}&episode=${episode}`;
+                if (player == 1) {
+                    iframe.src = `https://vidsrc.me/embed/tv?imdb=${id}&season=${season}&episode=${episode}`;
+                }
             }
             else {
+                if (player == 1) {
                 iframe.src = `https://vidsrc.me/embed/movie?imdb=${id}`;
+                }
             }
 
             jQuery.ajax({

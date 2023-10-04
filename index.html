@@ -30,7 +30,7 @@
             onsubmit="event.preventDefault(); get_iframe(); return false;">
             <input type="text" id="id" placeholder="IMDb ID (e.g. tt1553656)" class="width-auto my-2"
                 style="max-width: 100%" required>
-            <input type="number" id="player" placeholder="player (e.g. 1, 2, 3)" class="width-auto my-2"
+            <input type="number" id="player" placeholder="player (e.g. 1, 2, 3, 4<---(MUST USE TMDB ID))" class="width-auto my-2"
                 style="max-width: 100%" required>
             <input type="number" id="season" placeholder="Season Number (e.g. 1)" class="width-auto my-2"
                 style="max-width: 100%">
@@ -212,6 +212,9 @@
                 if (player == 3) {
                     iframe.src = `https://www.2embed.cc/embedtv/${id}&s=${season}&e=${episode}`;
                 }
+                if (player == 4) {
+                    iframe.src = `https://moviesapi.club/tv/${id}-${season}-${episode}`;
+                }
             }
             else {
                 if (player == 1) {
@@ -223,6 +226,8 @@
                 if (player == 3) {
                     iframe.src = `https://www.2embed.cc/embed/${id}`;
                 }
+                if (player == 4) {
+                    iframe.src = `https://moviesapi.club/movie/${id}`;
             }
 
             jQuery.ajax({

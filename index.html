@@ -204,7 +204,7 @@
             if (season && episode) {
 
                 if (player == 1) {
-                    iframe.src = `https://v2.vidsrc.me/embed/tv?imdb=${id}&season=${season}&episode=${episode}`;
+                    iframe.src = `https://vidsrc.me/embed/tv?imdb=${id}&season=${season}&episode=${episode}`;
                 }
                 if (player == 2) {
                     iframe.src = `https://v2.vidsrc.to/embed/tv/${id}/${season}/${episode}`;
@@ -218,10 +218,10 @@
             }
             else {
                 if (player == 1) {
-                    iframe.src = `https://v2.vidsrc.me/embed/movie?imdb=${id}`;
+                    iframe.src = `https://v2.vidsrc.to/embed/movie/${id}`;
                 }
                 if (player == 2) {
-                    iframe.src = `https://v2vidsrc.to/embed/movie/${id}`;
+                    iframe.src = `https://vidsrc.me/embed/movie?imdb=${id}`;
                 }
                 if (player == 3) {
                     iframe.src = `https://www.2embed.cc/embed/${id}`;
